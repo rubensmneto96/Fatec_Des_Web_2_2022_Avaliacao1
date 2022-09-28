@@ -1,18 +1,9 @@
 <?php
+    session_start();
 
-$filename = "herois.txt";
-
-if(!file_exists($filename)){
-    $file = fopen($filename, 'w');
-} else {
-    $file = fopen($filename, 'a');
-}
-
-$text = "Nome do herói: " . $_POST['nome'] . "Idade: " . $_POST['idade'] . "Poder: " . $_POST['poder'] . PHP_EOL;
-
-fwrite($file, $text);
-fclose($file);
-header('location: cadastroHerois.php');
+    if((!isset ($_SESSION['user']) == true) and (!isset ($_SESSION['passwd']) == true)){
+        header('location: index.php');
+    }
 
 ?>
 
@@ -32,7 +23,7 @@ header('location: cadastroHerois.php');
             </h1>
 
             <div class="container" style="width:50%; background-color: gray; border: 1px #292929 solid; border-radius: 4px; color: #fff; padding: 10px;">
-                <form method="post" action="herois.txt" id="loginForm" name="loginForm">
+                <form method="post" action="cadastrar.php" id="loginForm" name="loginForm">
                     <div class="mb-3">
                         <label for="nome" class="form-label">Nome do Herói</label>
                         <input type="text" class="form-control" id="nome" name="nome">
@@ -47,6 +38,10 @@ header('location: cadastroHerois.php');
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+                
+                <br>
+                
+                <a href="heroisCadastrados.php" class="btn btn-success">Ver heróis cadastrados</a>
             </div>
 
         </div>

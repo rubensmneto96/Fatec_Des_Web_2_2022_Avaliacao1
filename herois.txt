@@ -1,0 +1,3 @@
+Nome do herói: Wolverine | Idade: 200 | Poder: Fator de cura, faro aguçado, perito em todas as formas de combate, garras de adamantium
+Nome do herói: Batman | Idade: 40 | Poder: Mestre detetive, mestre em todas as formas de combate, mestre espião, mestre hacker
+Nome do herói: Homem de Ferro | Idade: 30 | Poder: É rico
